@@ -275,7 +275,7 @@ def main():
     
         # output current dictionary
         if args.dict_out_prefix:
-            all_pairs = [f"{src_words[a]} {trg_words[b]}" for a,b in zip(src_indices, trg_indices)]
+            all_pairs = [f"{src_words[a]} {trg_words[b]}" for a,b in zip(src_indices.tolist(), trg_indices.tolist())]
             with open(args.dict_out_prefix+".last", 'w') as fd:
                 fd.write("\n".join(all_pairs))
 
